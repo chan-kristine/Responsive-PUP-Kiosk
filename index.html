@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PUP Kiosk</title>
+</head>
+<body id="body">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function showSceneryBox(imgSource, heading, description){
+            let d = document.getElementById("display");
+            let e = document.getElementById("body");
+            e.style.overflow = "hidden";
+            document.addEventListener('mousemove', displayFollowCamera);
+            d.style.left = event.clientX + 5 + "px";
+            d.style.top = event.clientY + 5 + "px";
+            d.innerHTML = "<div id='wrapper'><img id='imgid' src='" + imgSource + 
+                "'>" + "<p>" + heading + "</p>" + "<p>" + description + "</p></div>";
+        }
+
+        function displayFollowCamera(){
+            let a = document.getElementById("display");
+            a.style.left = event.clientX + 5 + "px";
+            a.style.top = event.clientY + 5 + "px";
+        }
+
+        function removeSceneryBox(){
+            let a = document.getElementById("display");
+            let b = document.getElementById("body");
+            a.removeAttribute('style');
+            b.removeAttribute('style');
+            document.removeEventListener('mousemove', displayFollowCamera);
+            a.removeChild(a.childNodes[0]);
+        }
+    </script>
+
+    <header>
+        <img src="images/pupheader.jpg">
+    </header>
+
+    <main>
+        <img id="pupmap" src="images/main.gif" alt="PUP Map" usemap="#map">
+
+        <map name="map">
+            <area shape="poly" 
+            coords="806,295,652,503,674,591,760,624,926,429,899,327"            
+            img src="images/oval.jpg" alt="PUP Oval" 
+            onmouseover="showSceneryBox('images/oval.jpg', '<b>Oval Open Field</b>', 'This Olympic-sized oval is an open field for football, soccer and track and field.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            coords="578,46,674,118"            
+            img src="images/swimmingpool.jpg" alt="Swimming Pool" 
+            onmouseover="showSceneryBox('images/swimmingpool.jpg', '<b>PUP Swimming Pool</b>', 'The Olympic-sized university swimming pool serves as a training ground for the universitys aquatic athletes, as well as for the students to hold their swimming lessons.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            coords="537,523,69"            
+            img src="images/church.jpg" alt="Church" 
+            onmouseover="showSceneryBox('images/church.jpg', '<b>Interfaith Chapel</b>', 'This is where students, faculty, and other staff may hold their religious events inside the university.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            coords="742,138,820,218"            
+            img src="images/tenniscourt.jpg" alt="Tennis Open Court" 
+            onmouseover="showSceneryBox('images/tenniscourt.jpg', '<b>Tennis Open Court</b>', 'The Tennis Open Court is a place designed for students to encourage free play, development and fun through tennis.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            coords="598,242,24"            
+            img src="images/obelisk.jpg" alt="PUP Obelisk" 
+            onmouseover="showSceneryBox('images/obelisk.jpg', '<b>PUP Obelisk</b>', 'The Obelisk, standing majestic on its base, depicts the strength of the Polytechnic University of the Philippines as an institution of higher learning, promoting educational and moral aims which are fortified by a determined leadership with a clear vision for the Filipino youth and an efficient support system inspired by the virtues of public service. ')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            coords="378,473,444,473,438,590,432,609,391,611,381,590"
+            img src="images/east wing.jpg" alt="East Wing" 
+            onmouseover="showSceneryBox('images/east wing.jpg', '<b>Main Building - East Wing</b>', 'The eastern portion of the main building contains classrooms catering students from various courses.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            coords="631,133,727,199"            
+            img src="images/opencourt.jpg" alt="Basketball and Volleyball Court" 
+            onmouseover="showSceneryBox('images/opencourt.jpg', '<b>Open Court</b>', 'The Open Court is a place designed for students to encourage free play, development and fun through basketball and volleyball.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            coords="420,402,455,449,553,389,544,375,547,355,523,333"             
+            img src="images/north wing.jpg" alt="North Wing"  
+            onmouseover="showSceneryBox('images/north wing.jpg', '<b>Main Building - North Wing</b>', 'The northern portion of the main building contains classrooms catering students from various courses.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            coords="394,401,365,449,266,395,272,378,279,345,301,343,390,397"            
+            img src="images/west wing.jpg" alt="West Wing"
+            onmouseover="showSceneryBox('images/west wing.jpg', '<b>Main Building - West Wing</b>', 'The western portion of the main building contains classrooms catering students from various courses.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            coords="359,457,331,471,298,421,246,445,322,578,372,549,343,495,376,475"            
+            img src="images/south wing.jpg"  alt="South Wing"
+            onmouseover="showSceneryBox('images/south wing.jpg', '<b>Main Building - South Wing</b>', 'The south wing of the main building contains the function hall and carious offices, including the Office of the Registrar.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/dome.jpg" alt="Main Building" 
+            coords="399,399,366,456,376,471,439,471,454,453,422,400,411,400"            
+            onmouseover="showSceneryBox('images/dome.jpg', '<b> Main Building - Dome </b>', 'The dome contains a circular pathway connecting the six floors of the main building.')" 
+            onmouseout="removeSceneryBox()">
+            
+            <area shape="poly" 
+            img src="images/grandstand.jpg" alt="Grandstand"   
+            coords="712,346,694,369,681,375,686,384,669,403,681,413,695,394,702,399,714,380,707,372,725,351"            
+            onmouseover="showSceneryBox('images/grandstand.jpg', '<b>Grandstand</b>', 'The grandstand is a permanent structure for seating spectators. It is in essence like a single section of a stadium, but differs from a stadium in that it does not wrap all or most of the way around.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/gabriela hall.jpg" alt=" Community Building (Grabiela Silang)"  
+            coords="894,490,864,528,876,538,904,504"            
+            onmouseover="showSceneryBox('images/gabriela hall.jpg', '<b>Community Building (Grabiela Silang Hall)</b>', 'An Organization Hall for Gabriala Silang Org. and also an activities hall.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/nutrition.jpg" alt="College of Nutrition and Food Science Building"  
+            coords="452,603,604,629"            
+            onmouseover="showSceneryBox('images/nutrition.jpg', '<b>College of Nutrition and Food Science Building</b>', 'The College of Nutrition and Food Science Building serves as the home for the courses Bachelor of Science in Nutrition and Dietetics (BSND) and Bachelor of Science in Food Technology (BSFT).')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/campus development.jpg" alt="Campus  Development and Maintenance Building"  
+            coords="354,618,409,628"            
+            onmouseover="showSceneryBox('images/campus development.jpg', '<b>Building and Grounds Maintenance Office</b>', 'The Building and Grounds Maintenance Office sees to the general cleanliness, beautification, and maintenance of all buildings and grounds in the University.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/ferry.png"  alt=" Sta. Mesa Ferry Station" 
+            coords="270,593,303,619"            
+            onmouseover="showSceneryBox('images/ferry.png', '<b>Pasig River Ferry (Sta. Mesa Station)</b>', 'The Pasig River Ferry Service (PRFS) is a public water bus service based in Metro Manila, the Philippines. It is currently the only water-based transportation service in Metro Manila that cruises the length of the Pasig River and Marikina River, passing through the cities of Manila, Makati, Mandaluyong, Pasig, Marikina, and Taguig.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/gazebo.jpg" alt="Gazebo"  
+            coords="697,274,712,282"             
+            onmouseover="showSceneryBox('images/gazebo.jpg', '<b>Gazebo</b>', 'This is where students use to hang-out during their free time.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/flag.jpg"  alt="Flag Pole"  
+            coords="558,338,581,361"            
+            onmouseover="showSceneryBox('images/flag.jpg', '<b>Flag Pole</b>', 'This is where the students are gathered to hold the universitys monthly flag ceremonies.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            img src="images/freedom.png" alt="Freedom Park"  
+            coords="583,311,22"            
+            onmouseover="showSceneryBox('images/freedom.png', '<b>Nemesio E. Prudente Freedom Park</b>', ' This is a centrally located public space where political gatherings, rallies and demonstrations may be held without the need of prior permission from government authorities. It is named after the former president of PUP, Nemesio E. Prudente, who was credited with revitalizing public education in Philippines by institutionalizing much-needed changes in the state university he led, which will eventually become the largest state university.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/amphitheater.jpg" alt="Amphitheater"
+            coords="374,323,399,319,419,316,429,331,436,349,409,361,383,343"            
+            onmouseover="showSceneryBox('images/amphitheater.jpg', '<b>Amphitheater</b>', 'This is an open-air venue used for entertainment, performances, and sports.')" 
+            onmouseout="removeSceneryBox()">
+            
+            <area shape="poly"
+            img src="images/lagoon.jpg" alt="Lagoon"  
+            coords="462,161,492,164,500,194,477,225,460,270,434,300,421,305,391,311,371,318,371,301,402,293,401,253,417,232,432,230,449,222,449,181"            
+            onmouseover="showSceneryBox('images/lagoon.jpg', '<b>Lagoon</b>', 'The lagoon is an open space, mostly like a park, which is a well-known leisure spot for students in the university during their breaks.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/library.png" alt="Ninoy Aquino Library and Learning Resources Center"  
+            coords="336,28,371,10,402,95,477,66,489,106,416,138,442,214,401,232"            
+            onmouseover="showSceneryBox('images/library.png', '<b>Ninoy Aquino Library and Learning Resources Center</b>', 'The heart of the university, the Ninoy Aquino Library and Learning Resources Center is one of the major service centers of the Polytechnic University of the Philippines. As such, it strives to meet the academic and related needs of its clientele through the provision of adequate and efficient library and information services.            ')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/pe.png"  alt="Physical Education Building"  
+            coords="517,11,540,148"            
+            onmouseover="showSceneryBox('images/pe.png', '<b>Physical Education Building</b>', 'The Physical Education Building serves as the home for the College of Human Kinetics (CHK). The College of Human Kinetics (CHK) is gearing towards the attainment of the vision and mission of its fore bearers and present leaders who persist in their views of a tomorrow in physical education, well-being and sports development.')" 
+            onmouseout="removeSceneryBox()">
+            
+            <area shape="rect" 
+            img src="images/gym.jpg" alt="Gymnasium and Sports Center"  
+            coords="707,29,835,121"            
+            onmouseover="showSceneryBox('images/gym.jpg', '<b>Gymnasium and Sports Center</b>', 'The gymnasium serves as the second home to the student-athletes, is a  well-ventilated and spacious location for the training of the official representatives of the University in national and international sports competition, and also serves as a bigger events venue.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/laboratory.jpg" alt="Laboratory High School" 
+            coords="157,73,149,87,285,168,293,153"            
+            onmouseover="showSceneryBox('images/laboratory.jpg', '<b>Laboratory High School</b>', 'The PUP Laboratory High School (PUP LHS) was established in 1954 during the Philippine College of Commerce era. The PUP LHS curricular program focuses on Discipline, Academic Excellence, Nationalism and Commerce. It is one of the top performing high schools in the country producing top caliber students who later become prominent in their chosen field of specialization.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/charlie.jpg" alt="Charlie del Rosario Hall" 
+            coords="197,174,176,211,283,277,306,242"            
+            onmouseover="showSceneryBox('images/charlie.jpg', '<b>Charlie del Rosario Student Development Center</b>', 'The Charlie Del Rosario Building is a structure dedicated to the first victim of the Marcos Regime. An activist and desaparacido, he advocated rights for the oppressed. Even though he was never found again, he has already found his home here.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/sampaguita.jpg"  alt="University Canteen Sampaguita Building" 
+            coords="219,292,205,318,248,352,267,320"             
+            onmouseover="showSceneryBox('images/sampaguita.jpg', '<b>University Canteen Sampaguita Building</b>', 'The PUP Sampaguita Building hosts for the Bonifacio V. Romero Communication Center, which includes the universitys Communication Management Office.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly"
+            img src="images/canteen.jpg"  alt="Student Canteen" 
+            coords="248,270,235,290,265,308,280,283"            
+            onmouseover="showSceneryBox('images/canteen.jpg', '<b>Student Canteen</b>', 'This  Student canteen is primarily responsible for serving nutritious and hygienic food to the students and staff. It also serves meals to the students residing in the campus.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/pasig river.jpg"  alt="Pasig River"  
+            coords="0,2,36,2,103,98,275,627,3,629"            
+            onmouseover="showSceneryBox('images/pasig river.jpg', '<b>Pasig River</b>', 'The Pasig River is a water body in the Philippines that connects Laguna de Bay to Manila Bay. Stretching for 25.2 kilometers, it bisects the Philippine capital of Manila and its surrounding urban area into northern and southern halves.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/property.jpg" alt="Property Building"   
+            coords="88,2,88,12,104,16,104,25,134,25,134,14,149,17,147,-1"            
+            onmouseover="showSceneryBox('images/property.jpg', '<b>PUP Property Building and Motorpool</b>', 'The Property Building serves as the home for the universitys Property and Supplies Management Office.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly"
+            img src="images/banda kawayan.jpg" alt="Banda Kawayan"   
+            coords="316,4,325,4,325,22,301,22,300,11"             
+            onmouseover="showSceneryBox('images/banda kawayan.jpg', '<b>Banda Kawayan, Sining Lahi Headquarters</b>', 'This bulding hosts the Bandang Kawayan. The Banda Kawayan (Bamboo Orchestra) is a unique ensemble of young, talented students from the Polytechnic University of the Philippines (PUP) in Manila.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            img src= "images/water tank.jpg" alt="R.C Overhead Water Tank"  
+            coords="320,74,16"             
+            onmouseover="showSceneryBox('images/water tank.jpg', '<b>R.C Overhead Water Tank</b>', 'This serves as the universitys overhead water reservoir.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="rect" 
+            img src="images/PUP PYLON.jpg" alt="Pylon"  
+            coords="906,218,929,243"            
+            onmouseover="showSceneryBox('images/PUP PYLON.jpg', '<b>PUP Pylon</b>', 'The Pylon originally stood for the true, the good and the beautiful.            ')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            img src = "images/main gate.jpg" alt="Main Gate"  
+            coords="922,254,13"            
+            onmouseover="showSceneryBox('images/main gate.jpg', '<b>Main Gate</b>', 'The main gate serves as the primary entrance of students, faculty, and other staff to the central part of the university.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle"
+            img src = "images/guard.jpg" alt="Guard House"  
+            coords="899,280,13"            
+            onmouseover="showSceneryBox('images/guard.jpg', '<b>Guard House</b>', 'This is a small house that accommodates a guard who controls entrance to the grounds of a house, housing development, school, or other facility. ')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/covered.jpg"  alt="Covered Walkway"  
+            coords="787,239,805,269,881,265,876,242"            
+            onmouseover="showSceneryBox('images/covered.jpg', '<b>Covered Walkway</b>', 'The University Catwalk is a place wherein students can enjoy strolling around with the absence of the sun.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="circle" 
+            img src= "images/west gate.png" alt="West Gate"  
+            coords="922,164,26"            
+            onmouseover="showSceneryBox('images/west gate.png', '<b>West Gate</b>', 'This gate covers the western part of the university.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/Centennial Monument.jpg" alt="Centennial Monument"  
+            coords="535,181,561,195,545,233,550,273,533,286"            
+            onmouseover="showSceneryBox('images/Centennial Monument.jpg', '<b>Centennial Monument</b>', 'The Centenary Logo is an emblem of a noble and glorious past, a living testimony to the University populations adherence to the beautiful traits of loyalty, integrity, love of peace, commitment to service, and undying love of and devotion to God - essential attributes in the pursuit of academic excellence and progress in a span of one hundred years (1904-2004).')" 
+            onmouseout="removeSceneryBox()">
+    
+            <area shape="circle"
+            img src="images/linear park.png" alt="PUP Linear Park"  
+            coords="215,371,31"            
+            onmouseover="showSceneryBox('images/linear park.png', '<b>PUP Linear Park</b>', 'The Linear Park is a place wherein students can find some time to relax under the trees after busy days.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/access road.png" alt="Access Road"  
+            coords="805,269,777,265,613,429,611,452,705,326,694,312"            
+            onmouseover="showSceneryBox('images/access road.png', '<b>Access Road</b>', 'The Access Road connects various areas of the university to its main building.')" 
+            onmouseout="removeSceneryBox()">
+
+            <area shape="poly" 
+            img src="images/Apolinario Shrine.jpg" alt="Apolinario Mabini Shrine"   
+            coords="651,284,619,345,639,363,681,309" 
+            onmouseover="showSceneryBox('images/Apolinario Shrine.jpg', '<b>Apolinario Mabini Shrine</b>', 'The Apolinario Mabini Shrine (Filipino: Dambanang Apolinario Mabini) is a historic site in Santa Mesa, Manila, Philippines.')" 
+            onmouseout="removeSceneryBox()">
+
+
+        </map>
+
+        <span id="display"></span>
+    </main>  
+</body>
+</html>
